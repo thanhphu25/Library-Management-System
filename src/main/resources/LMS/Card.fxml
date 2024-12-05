@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="box" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="380.0" spacing="15.0" style="-fx-background-radius: 15;" styleClass="shadow" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CardController">
+   <children>
+      <ImageView fx:id="bookImage" fitHeight="170.0" fitWidth="408.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/FORTRESS BLOOD.jpeg" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="200.0" prefWidth="230.0">
+         <children>
+            <Label fx:id="bookTitle" prefHeight="154.0" prefWidth="230.0" text="FORTRESS BLOOD" wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="bookAuthor" graphicTextGap="10.0" layoutX="10.0" layoutY="90.0" prefHeight="30.0" prefWidth="230.0" text="Author">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/author24.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</HBox>

@@ -1,0 +1,26 @@
+.white-bg {
+  background-color: #fff;
+}
+
+.btn {
+  -fx-background-color: linear-gradient(to bottom right, #37AEE2, #1E96C8);
+  -fx-cursor: hand;
+  -fx-text-fill: #fff;
+  -fx-font-size: 14px;
+  -fx-font-family: Arial;
+}
+
+.btn:hover {
+  -fx-background-color: linear-gradient(to bottom right, #1E96C0, #37AEd0);
+}
+
+.textfield {
+  -fx-border-coior: #000;
+  -fx-border-width: .5px;
+}
+
+.textfield:focused {
+  -fx-background-color: linear-gradient(to bottom right, #ddeff1, #98d4e0);
+  -fx-border-width: .8px;
+}
+

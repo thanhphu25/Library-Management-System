@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1096.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0" styleClass="white-bg" stylesheets="@design.css">
+         <children>
+            <ImageView fitHeight="640.0" fitWidth="1096.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/loginBackground.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="login_form" layoutX="619.0" layoutY="14.0" prefHeight="594.0" prefWidth="372.0">
+               <children>
+                  <Label layoutX="106.0" layoutY="132.0" text="Sign In Account" textFill="#0c5d63">
+                     <font>
+                        <Font name="Roboto Condensed Black" size="25.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="login_username" layoutX="50.0" layoutY="206.0" prefHeight="45.0" prefWidth="272.0" promptText="Email" styleClass="textfield" />
+                  <TextField fx:id="login_showPassword" layoutX="50.0" layoutY="274.0" prefHeight="45.0" prefWidth="272.0" promptText="Password" styleClass="textfield" visible="false" />
+                  <PasswordField fx:id="login_password" layoutX="50.0" layoutY="274.0" prefHeight="46.0" prefWidth="272.0" promptText="Password" styleClass="textfield" />
+                  <CheckBox fx:id="login_selectShowPassword" layoutX="50.0" layoutY="344.0" mnemonicParsing="false" onAction="#togglePasswordVisibility" text="Show password" />
+                  <Hyperlink fx:id="login_forgotPassword" layoutX="221.0" layoutY="341.0" onAction="#handleForgotPassword" text="Forgot Password?" />
+                  <Button fx:id="login_btn" layoutX="50.0" layoutY="377.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="46.0" prefWidth="272.0" styleClass="btn" text="Login">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="53.0" layoutY="486.0" text="Don't have an account yet?">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink fx:id="hyperlink_createAccount" layoutX="234.0" layoutY="483.0" onAction="#handleSignUp" text="Create one.">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Hyperlink>
+                  <Button fx:id="login_createAccount" layoutX="50.0" layoutY="545.0" mnemonicParsing="false" onAction="#handleCreateAccount" prefHeight="30.0" prefWidth="272.0" styleClass="btn" text="Create Account" visible="false" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="signup_form" layoutX="700.0" layoutY="25.0" prefHeight="594.0" prefWidth="372.0" visible="false">
+               <children>
+                  <Label layoutX="147.0" layoutY="29.0" text="Sign Up" textFill="#0c5d63">
+                     <font>
+                        <Font name="Gill Sans MT" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="68.0" layoutY="74.0" text="Already have an account?">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink fx:id="hyperlink_loginHere" layoutX="226.0" layoutY="71.0" onAction="#handleBack" text="Login here." underline="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Hyperlink>
+                  <TextField fx:id="signup_email" layoutX="50.0" layoutY="105.0" prefHeight="39.0" prefWidth="272.0" promptText="Email" styleClass="textfield" />
+                  <TextField fx:id="signup_username" layoutX="50.0" layoutY="160.0" prefHeight="39.0" prefWidth="272.0" promptText="Name" styleClass="textfield" />
+                  <PasswordField fx:id="signup_password" layoutX="50.0" layoutY="215.0" prefHeight="39.0" prefWidth="272.0" promptText="Password" styleClass="textfield" />
+                  <TextField fx:id="signup_address" layoutX="50.0" layoutY="270.0" prefHeight="39.0" prefWidth="272.0" promptText="Address" styleClass="textfield" />
+                  <TextField fx:id="signup_phone" layoutX="50.0" layoutY="325.0" prefHeight="39.0" prefWidth="272.0" promptText="Phone" styleClass="textfield" />
+                  <CheckBox fx:id="signup_librarian" layoutX="50.0" layoutY="375.0" mnemonicParsing="false" onAction="#handleLibrarianSignup" prefHeight="30.0" prefWidth="89.0" text="Librarian" />
+                  <PasswordField fx:id="signup_systemPassword" layoutX="50.0" layoutY="410.0" prefHeight="39.0" prefWidth="272.0" promptText="Password" styleClass="textfield" />
+                  <TextField fx:id="signup_salary" layoutX="50.0" layoutY="465.0" prefHeight="39.0" prefWidth="272.0" promptText="Salary" styleClass="textfield" visible="false" />
+                  <Button fx:id="signup_btn" layoutX="50.0" layoutY="530.0" mnemonicParsing="false" onAction="#handleCreateAccount" prefHeight="46.0" prefWidth="272.0" styleClass="btn" text="Sign Up">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

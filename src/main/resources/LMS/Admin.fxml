@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1096.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminController">
+   <children>
+      <BorderPane fx:id="paneHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1096.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" styleClass="white-background" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="Library" textFill="#268b9e">
+                     <font>
+                        <Font name="Berlin Sans FB" size="36.0" />
+                     </font></Label>
+                  <Pane prefHeight="50.0" prefWidth="870.0">
+                     <children>
+                        <Button fx:id="btnUser" layoutX="800.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleShowInfo" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 50; -fx-border-radius: 50;" styleClass="btn" stylesheets="@styles.css">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/user.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label fx:id="labelWelcome" alignment="CENTER" contentDisplay="CENTER" layoutX="343.0" layoutY="14.0" text="Welcome, AdminName">
+                           <font>
+                              <Font name="Roboto Condensed Black" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </top>
+         <left>
+            <VBox prefHeight="590.0" prefWidth="210.0" styleClass="white-background" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="546.0" prefWidth="210.0" spacing="5.0">
+                     <children>
+                        <Separator prefWidth="200.0" />
+                        <Button fx:id="btnDashboard" alignment="TOP_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#handleDashBoard" prefHeight="40.0" prefWidth="250.0" styleClass="btn" stylesheets="@styles.css" text="Dashboard">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/dashboard.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Roboto Condensed Black" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnBooks" alignment="TOP_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#handleBooks" prefHeight="40.0" prefWidth="250.0" styleClass="btn" stylesheets="@styles.css" text="Books">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/book_1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Roboto Condensed Black" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnUsers" alignment="TOP_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#handleUsers" prefHeight="40.0" prefWidth="250.0" styleClass="btn" stylesheets="@styles.css" text="Users">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/users.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Roboto Condensed Black" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnHistory" alignment="TOP_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#handleHistory" prefHeight="40.0" prefWidth="250.0" styleClass="btn" stylesheets="@styles.css" text="History">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/history.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Roboto Condensed Black" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnNotifications" alignment="TOP_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#handleNotifications" prefHeight="40.0" prefWidth="250.0" styleClass="btn" stylesheets="@styles.css" text="Notifications">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/notifications.png" />
+                                 </image></ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Roboto Condensed Black" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Button fx:id="btnLogOut" alignment="TOP_LEFT" graphicTextGap="25.0" mnemonicParsing="false" onAction="#handleLogOut" prefHeight="40.0" prefWidth="250.0" styleClass="btn" stylesheets="@styles.css" text="Log Out">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Roboto Condensed Black" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <AnchorPane prefHeight="590.0" prefWidth="886.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="paneDashboard" prefHeight="590.0" prefWidth="886.0">
+                     <children>
+                        <Separator layoutX="227.0" layoutY="2.0" orientation="VERTICAL" prefHeight="586.0" prefWidth="0.0" />
+                        <VBox alignment="CENTER" prefHeight="590.0" prefWidth="230.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="150.0" prefWidth="394.0">
+                                 <children>
+                                    <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/books100.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="158.0">
+                                       <children>
+                                          <Label alignment="CENTER" prefHeight="68.0" prefWidth="158.0" text="Total Books">
+                                             <font>
+                                                <Font name="Roboto Condensed Black" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="labelTotalBooks" alignment="CENTER" prefHeight="81.0" prefWidth="165.0" text="0">
+                                             <font>
+                                                <Font size="36.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="394.0">
+                                 <children>
+                                    <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/user100.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="150.0" prefWidth="158.0">
+                                       <children>
+                                          <Label alignment="CENTER" prefHeight="68.0" prefWidth="158.0" text="Total Users">
+                                             <font>
+                                                <Font name="Roboto Condensed Black" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="labelTotalUsers" alignment="CENTER" prefHeight="81.0" prefWidth="165.0" text="0">
+                                             <font>
+                                                <Font size="36.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="barChart" layoutX="233.0" layoutY="2.0" prefHeight="586.0" prefWidth="650.0">
+                           <children>
+                              <BarChart fx:id="borrowedBookChart" prefHeight="588.0" prefWidth="650.0" stylesheets="@styles.css" title="Number of Books borrowed in the last 7 days">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </BarChart>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding></VBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="paneBooks" prefHeight="590.0" prefWidth="886.0" visible="false">
+                     <children>
+                        <Separator layoutX="440.0" orientation="VERTICAL" prefHeight="590.0" prefWidth="10.0" />
+                        <GridPane layoutX="14.0" layoutY="31.0" prefHeight="538.0" prefWidth="409.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="160.19998779296876" minHeight="10.0" prefHeight="99.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="160.19998779296876" minHeight="10.0" prefHeight="99.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="439.20000000000005" minHeight="10.0" prefHeight="439.20000000000005" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TableView fx:id="tableBooks" editable="true" prefHeight="439.0" prefWidth="406.0" styleClass="white-background" stylesheets="@styles.css" GridPane.rowIndex="2">
+                                 <columns>
+                                    <TableColumn fx:id="bookIdColumn" prefWidth="35.0" text="ID" />
+                                    <TableColumn fx:id="bookTitleColumn" prefWidth="160.0" text="Title" />
+                                    <TableColumn fx:id="bookAuthorColumn" prefWidth="137.59994506835938" text="Author" />
+                                    <TableColumn fx:id="bookIsIssuedColumn" prefWidth="52.0" text="Issued" />
+                                    <TableColumn fx:id="bookOptionsColumn" maxWidth="35.0" minWidth="1.0" prefWidth="35.0" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="10.0" styleClass="round-layout">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/search.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField fx:id="bookSearchTextField" prefHeight="30.0" prefWidth="297.0" promptText="Search" stylesheets="@styles.css">
+                                       <styleClass>
+                                          <String fx:value="transparent" />
+                                          <String fx:value="round-layout" />
+                                       </styleClass>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Button fx:id="btnAddBook" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleAddBook" prefHeight="38.0" prefWidth="135.0" style="-fx-background-color: #5dbdb4;" styleClass="btn" stylesheets="@styles.css" text="Add " textAlignment="CENTER">
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/add.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                              </HBox>
+                           </children>
+                        </GridPane>
+                        <ScrollPane layoutX="444.0" prefHeight="590.0" styleClass="transparent" stylesheets="@styles.css">
+                           <content>
+                              <VBox alignment="TOP_CENTER" prefHeight="1024.0" prefWidth="441.0" spacing="50.0">
+                                 <children>
+                                    <StackPane fx:id="box">
+                                       <children>
+                                          <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="380.0" styleClass="shadow" stylesheets="@styles.css" />
+                                       </children>
+                                    </StackPane>
+                                    <Label fx:id="textSubTiltle" alignment="CENTER" contentDisplay="CENTER" prefHeight="254.0" prefWidth="380.0" style="-fx-background-radius: 20; -fx-border-color: #5dbdb4; -fx-border-radius: 20;" styleClass="white-background" stylesheets="@styles.css" text="description" textAlignment="CENTER" wrapText="true">
+                                       <font>
+                                          <Font name="Roboto Condensed Black" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="QR Code">
+                                       <font>
+                                          <Font name="Roboto Condensed Black" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="qrImage" fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="50.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="paneUsers" prefHeight="590.0" prefWidth="886.0" visible="false">
+                     <children>
+                        <GridPane layoutX="4.0" layoutY="52.0" prefHeight="538.0" prefWidth="878.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="160.19998779296876" minHeight="10.0" prefHeight="99.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="439.20000000000005" minHeight="10.0" prefHeight="439.20000000000005" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TableView fx:id="tableUsers" editable="true" prefHeight="302.0" prefWidth="878.0" GridPane.rowIndex="1">
+                                 <columns>
+                                    <TableColumn fx:id="userIdColumn" prefWidth="46.40000772476196" text="ID" />
+                                    <TableColumn fx:id="userNameColumn" prefWidth="221.5999526977539" text="Name" />
+                                    <TableColumn fx:id="userEmailColumn" minWidth="0.0" prefWidth="222.4000244140625" text="Email" />
+                                    <TableColumn fx:id="userAddressColumn" minWidth="0.0" prefWidth="143.20001220703125" text="Address" />
+                                    <TableColumn fx:id="userPhoneColumn" minWidth="8.800048828125" prefWidth="157.60003662109375" text="Phone" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                                 <stylesheets>
+                                    <URL value="@styles.css" />
+                                 </stylesheets>
+                                 <styleClass>
+                                    <String fx:value="white-background" />
+                                    <String fx:value="table" />
+                                 </styleClass>
+                              </TableView>
+                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="10.0" styleClass="round-layout">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/search.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField fx:id="userSearchTextField" prefHeight="30.0" prefWidth="297.0" promptText="Search" stylesheets="@styles.css">
+                                       <styleClass>
+                                          <String fx:value="transparent" />
+                                          <String fx:value="round-layout" />
+                                       </styleClass>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="paneHistory" visible="false" xmlns:fx="http://javafx.com/fxml">
+                     <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="4.0" layoutY="84.0" prefHeight="498.0" prefWidth="878.0">
+                        <content>
+                           <TableView fx:id="historyTableView" prefHeight="580.0" prefWidth="880.0">
+                              <columns>
+                                 <TableColumn fx:id="noColumn" text="No." />
+                                 <TableColumn fx:id="bookIDColumn" text="BookID" />
+                                 <TableColumn fx:id="titleColumn" text="Book's Title" />
+                                 <TableColumn fx:id="borrowerIDColumn" text="BorrowerID" />
+                                 <TableColumn fx:id="borrowerColumn" text="Borrower's Name" />
+                                 <TableColumn fx:id="issuerIDColumn" text="IssuerID" />
+                                 <TableColumn fx:id="issuerColumn" text="Issuer's Name" />
+                                 <TableColumn fx:id="issuedDateColumn" text="Issued Date" />
+                                 <TableColumn fx:id="receiverIDColumn" text="ReceiverID" />
+                                 <TableColumn fx:id="receiverColumn" text="Receiver's Name" />
+                                 <TableColumn fx:id="returnedDateColumn" text="Returned Date" />
+                              </columns>
+                           </TableView>
+                        </content>
+                        <padding>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                     </ScrollPane>
+                     <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../images/search.png" />
+                        </image>
+                     </ImageView>
+                     <TextField fx:id="historySearchTextField" layoutX="55.0" layoutY="49.0" prefHeight="30.0" prefWidth="297.0" promptText="Search" stylesheets="@styles.css">
+                        <styleClass>
+                           <String fx:value="transparent" />
+                           <String fx:value="round-layout" />
+                        </styleClass>
+                     </TextField>
+                  </AnchorPane>
+                  <AnchorPane fx:id="paneAddBook" prefHeight="590.0" prefWidth="886.0" visible="false">
+                     <children>
+                        <GridPane layoutX="117.0" layoutY="77.0" prefHeight="436.0" prefWidth="651.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="439.20000000000005" minHeight="10.0" prefHeight="47.79999847412108" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="439.20000000000005" minHeight="10.0" prefHeight="388.6000015258789" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TableView fx:id="tableAddBooks" prefHeight="608.0" prefWidth="651.0" styleClass="white-background" stylesheets="@styles.css" GridPane.rowIndex="1">
+                                 <columns>
+                                    <TableColumn fx:id="addBookTitleColumn" prefWidth="118.40003204345703" text="Title" />
+                                    <TableColumn fx:id="addBookAuthorColumn" prefWidth="118.40008544921875" text="Author" />
+                                    <TableColumn fx:id="addBookBtnColumn" text="Add" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="10.0" styleClass="round-layout">
+                                 <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/search.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField fx:id="bookApiSearchTextField" prefHeight="30.0" prefWidth="297.0" promptText="Search" stylesheets="@styles.css">
+                                       <styleClass>
+                                          <String fx:value="transparent" />
+                                          <String fx:value="round-layout" />
+                                       </styleClass>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </GridPane>
+                        <Label layoutX="103.0" layoutY="46.0" prefHeight="23.0" prefWidth="200.0" text="Add Book From API">
+                           <font>
+                              <Font name="Roboto Condensed Black" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="buttonBackFromPaneAPI" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleBackFromPaneAPI" stylesheets="@styles.css" text="Back">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/back.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="paneSearchBorrower" prefHeight="100.0" prefWidth="500.0" visible="false">
+
+                  </AnchorPane>
+                  <AnchorPane fx:id="paneNotifications" prefHeight="590.0" prefWidth="887.0" visible="false">
+                     <children>
+                        <VBox layoutX="4.0" prefHeight="590.0" prefWidth="878.0">
+                           <children>
+                              <VBox prefHeight="41.0" prefWidth="886.0" />
+                              <VBox layoutX="4.0" prefHeight="34.0" prefWidth="878.0">
+                                 <children>
+                                    <HBox prefHeight="34.0" prefWidth="647.0">
+                                       <children>
+                                          <HBox prefHeight="34.0" prefWidth="959.0" />
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="btnClearNotifications" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#handleClearNotifications" text="Clear" textAlignment="CENTER" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox layoutX="4.0" prefHeight="514.0" prefWidth="878.0">
+                                 <children>
+                                    <TableView fx:id="tableNotifications" prefHeight="481.0" prefWidth="886.0">
+                                      <columns>
+                                        <TableColumn fx:id="notificationsNoColumn" prefWidth="75.0" text="No." />
+                                        <TableColumn fx:id="notificationsMessageColumn" prefWidth="810.3999923706054" text="Message" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+      <AnchorPane fx:id="paneInformation" visible="false">
+         <children>
+            <VBox fx:id="formUser" prefHeight="640.0" prefWidth="1096.0">
+               <children>
+                  <HBox prefHeight="50.0" prefWidth="200.0" styleClass="transparent" stylesheets="@styles.css">
+                     <children>
+                        <Button fx:id="backButton" alignment="TOP_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="66.0" prefWidth="152.0" styleClass="btn" stylesheets="@styles.css" text="Back">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/back2.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Roboto Condensed Black" size="24.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="205.0" prefWidth="1096.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="250.0" prefWidth="250.0">
+                           <children>
+                              <Pane maxHeight="150.0" maxWidth="150.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-radius: 100; -fx-border-width: 3;" stylesheets="@styles.css">
+                                 <children>
+                                    <ImageView fx:id="userImageView" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icon100.png" />
+                                       </image></ImageView>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="340.0" prefWidth="200.0" styleClass="transparent" stylesheets="@styles.css">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="365.0" spacing="5.0">
+                           <children>
+                              <Label lineSpacing="15.0" prefHeight="18.0" prefWidth="438.0" text="Username">
+                                 <font>
+                                    <Font name="Roboto Condensed Black" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="infoName" prefHeight="46.0" prefWidth="0.0" promptText="Username">
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label lineSpacing="15.0" prefHeight="18.0" prefWidth="438.0" text="Email">
+                                 <font>
+                                    <Font name="Roboto Condensed Black" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="infoEmail" prefHeight="46.0" prefWidth="0.0" promptText="Email">
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label lineSpacing="15.0" prefHeight="18.0" prefWidth="438.0" text="Ardress">
+                                 <font>
+                                    <Font name="Roboto Condensed Black" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="infoAddress" prefHeight="46.0" prefWidth="0.0" promptText="Adress">
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label lineSpacing="15.0" prefHeight="18.0" prefWidth="438.0" text="Phone Number">
+                                 <font>
+                                    <Font name="Roboto Condensed Black" size="18.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="infoPhone" prefHeight="46.0" prefWidth="0.0" promptText="Phone Number">
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

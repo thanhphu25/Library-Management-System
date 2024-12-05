@@ -1,0 +1,44 @@
+.chart-bar {
+  -fx-bar-fill: #5fc3d8; /* Change this color to your desired bar color */
+}
+
+.white-background {
+  -fx-background-color: #FFFFFF;
+}
+
+.transparent {
+  -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+.round-layout {
+  -fx-border-radius: 50;
+  -fx-border-color: #5dbdb4;
+}
+
+.selected {
+  -fx-background-color: #F3F3F3;
+}
+
+.mouse-moved:hover {
+  -fx-background-color: #E4E4E4;
+}
+
+.shadow {
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0), 10, 0, 0, 10);
+}
+
+.pane_image {
+  -fx-border-width: 2px;
+  -fx-border-color: #12b4a6;
+  -fx-background-radius: 100;
+  -fx-border-radius: 100;
+}
+
+.btn {
+  -fx-background-color: rgba(0, 0, 0, 0);
+  -fx-cursor: hand;
+}
+
+.btn:hover {
+  -fx-background-color: #F3F3F3;
+}
